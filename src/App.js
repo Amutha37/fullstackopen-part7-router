@@ -2,29 +2,16 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { useState } from 'react'
 
 const Menu = () => {
-  const padding = {
-    paddingRight: '30px',
-  }
-  const style = {
-    textAlign: 'center',
-    border: 'solid',
-    backgroundColor: 'grey',
-    padding: 10,
-    borderWidth: 1,
-    marginBottom: 37,
-    borderRadius: 5,
-    color: 'yellow',
-  }
   return (
     <Router>
-      <div style={style}>
-        <Link style={padding} to='/'>
+      <div id='nav_bar'>
+        <Link className='link' to='/'>
           Home
         </Link>
-        <Link style={padding} to='/create'>
+        <Link className='link' to='/create'>
           Create
         </Link>
-        <Link style={padding} to='/about'>
+        <Link className='link' to='/about'>
           About
         </Link>
       </div>
@@ -39,11 +26,6 @@ const Menu = () => {
         <i>Note app, Department of Computer Science 2023</i>
       </div>
     </Router>
-    // <div>
-    //   <a href='#' style={padding}>anecdotes</a>
-    //   <a href='#' style={padding}>create new</a>
-    //   <a href='#' style={padding}>about</a>
-    // </div>
   )
 }
 
