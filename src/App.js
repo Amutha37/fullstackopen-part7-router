@@ -2,9 +2,12 @@ import { useNavigate, useMatch } from 'react-router-dom'
 import { useState } from 'react'
 import About from './components/About'
 import Footer from './components/Footer'
+
+import { Routes, Route, Link } from 'react-router-dom'
+import CreateNew from './components/CreateNew'
 import Anecdote from './components/Anecdote'
 import AnecdoteList from './components/AnecdoteList'
-import Menu from './components/Menu'
+// import Menu from './components/Menu'
 
 const App = () => {
   const navigate = useNavigate()
@@ -55,11 +58,38 @@ const App = () => {
   return (
     <div>
       <h1>Software anecdotes</h1>
+      <div id='nav_bar'>
+        <Link className='link' to='/anecdotes'>
+          Home
+        </Link>
+        <Link className='link' to='/create'>
+          Create
+        </Link>
+        <Link className='link' to='/about'>
+          About
+        </Link>
+      </div>
 
-      <Menu anecdotes={anecdotes} />
+      <Routes>
+        <Route
+          path='/anecdotes/:id'
+          element={<Anecdote anecdote={anecdote} />}
+        />
+        <Route
+          path='/anecdotes'
+          element={<AnecdoteList anecdotes={anecdotes} />}
+        />
+        <Route path='/create' element={<CreateNew />} />
+        <Route path='/about' element={<About />} />
+      </Routes>
+
+      <div>
+        <i>Anecdotes app, Department of Computer Science 2023</i>
+      </div>
+      {/* <Menu anecdotes={anecdotes} />
       <AnecdoteList anecdotes={anecdotes} />
       <About />
-      <CreateNew addNew={addNew} />
+      <CreateNew addNew={addNew} /> */}
       <Footer />
     </div>
   )
@@ -102,54 +132,5 @@ const App = () => {
 //     </>
 //   )
 // }
-
-const CreateNew = (props) => {
-  const [content, setContent] = useState('')
-  const [author, setAuthor] = useState('')
-  const [info, setInfo] = useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    props.addNew({
-      content,
-      author,
-      info,
-      votes: 0,
-    })
-  }
-
-  return (
-    <div>
-      <h2>create a new anecdote</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          content
-          <input
-            name='content'
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </div>
-        <div>
-          author
-          <input
-            name='author'
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-        </div>
-        <div>
-          url for more info
-          <input
-            name='info'
-            value={info}
-            onChange={(e) => setInfo(e.target.value)}
-          />
-        </div>
-        <button>create</button>
-      </form>
-    </div>
-  )
-}
 
 export default App

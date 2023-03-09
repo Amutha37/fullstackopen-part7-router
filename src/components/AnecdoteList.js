@@ -25,7 +25,7 @@ import React from 'react'
 // }
 
 const AnecdoteList = ({ anecdotes }) => {
-  console.log('list', anecdotes)
+  console.log('LIST', anecdotes)
   return (
     <div>
       <h2>Anecdotes</h2>
