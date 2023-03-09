@@ -51,3 +51,6 @@ tr:last-child td {
 tr td {
   font-weight: bold;
 }
+#footer {
+  margin-top: 9rem;
+}

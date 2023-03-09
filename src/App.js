@@ -83,9 +83,6 @@ const App = () => {
         <Route path='/about' element={<About />} />
       </Routes>
 
-      <div>
-        <i>Anecdotes app, Department of Computer Science 2023</i>
-      </div>
       {/* <Menu anecdotes={anecdotes} />
       <AnecdoteList anecdotes={anecdotes} />
       <About />
