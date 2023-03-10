@@ -1,6 +1,5 @@
 import { useMatch } from 'react-router-dom'
 import About from './About'
-
 import { Routes, Route, Link } from 'react-router-dom'
 import CreateNew from './CreateNew'
 import Anecdote from './Anecdote'
@@ -9,6 +8,7 @@ import AnecdoteList from './AnecdoteList'
 const Menu = (props) => {
   const anecdotes = props.anecdotes
   const addNew = props.addNew
+
   const match = useMatch('/anecdotes/:id')
   const anecdote = match
     ? anecdotes.find((anecdote) => anecdote.id === Number(match.params.id))

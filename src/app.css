@@ -12,6 +12,16 @@
   color: yellow;
 }
 
+.notification {
+  border: solid;
+  background-color: grey;
+  padding: 10px;
+  border-width: 1px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  color: yellow;
+}
+
 #footer {
   margin-top: 9rem;
 }

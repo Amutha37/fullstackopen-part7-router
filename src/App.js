@@ -56,32 +56,10 @@ const App = () => {
   return (
     <div>
       <h1>Software anecdotes</h1>
-      {/* <div id='nav_bar'>
-        <Link className='link' to='/'>
-          Home
-        </Link>
-        <Link className='link' to='/create'>
-          Create
-        </Link>
-        <Link className='link' to='/about'>
-          About
-        </Link>
-      </div> */}
+
       {notification ? <Notification notification={notification} /> : null}
       <Menu anecdotes={anecdotes} addNew={addNew} />
-      {/* <Routes>
-        <Route
-          path='/anecdotes/:id'
-          element={<Anecdote anecdote={anecdote} />}
-        />
-        <Route
-          path='/anecdotes'
-          element={<AnecdoteList anecdotes={anecdotes} />}
-        />
-        <Route path='/create' element={<CreateNew addNew={addNew} />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/' element={<AnecdoteList anecdotes={anecdotes} />} />
-      </Routes> */}
+
       <Footer />
     </div>
   )
