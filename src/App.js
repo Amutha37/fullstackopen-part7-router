@@ -1,12 +1,6 @@
 import { useNavigate, useMatch } from 'react-router-dom'
 import { useState } from 'react'
-// import About from './components/About'
 import Footer from './components/Footer'
-
-// import { Routes, Route, Link } from 'react-router-dom'
-// import CreateNew from './components/CreateNew'
-// import Anecdote from './components/Anecdote'
-// import AnecdoteList from './components/AnecdoteList'
 import Menu from './components/Menu'
 import Notification from './components/Notification'
 
