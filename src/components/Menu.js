@@ -1,23 +1,27 @@
-import {
-  // BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom'
-import CreateNew from './CreateNew'
+import { useMatch } from 'react-router-dom'
 import About from './About'
+
+import { Routes, Route, Link } from 'react-router-dom'
+import CreateNew from './CreateNew'
 import Anecdote from './Anecdote'
 import AnecdoteList from './AnecdoteList'
 
 const Menu = (props) => {
   const anecdotes = props.anecdotes
+  const addNew = props.addNew
+  const match = useMatch('/anecdotes/:id')
+  const anecdote = match
+    ? anecdotes.find((anecdote) => anecdote.id === Number(match.params.id))
+    : null
 
-  console.log('menu anecdotes', anecdotes)
   return (
     <>
       <div id='nav_bar'>
         <Link className='link' to='/'>
           Home
+        </Link>
+        <Link className='link' to='/anecdotes'>
+          Anecdotes
         </Link>
         <Link className='link' to='/create'>
           Create
@@ -30,19 +34,16 @@ const Menu = (props) => {
       <Routes>
         <Route
           path='/anecdotes/:id'
-          element={<Anecdote anecdotes={anecdotes} />}
+          element={<Anecdote anecdote={anecdote} />}
         />
         <Route
           path='/anecdotes'
           element={<AnecdoteList anecdotes={anecdotes} />}
         />
-        <Route path='/create' element={<CreateNew />} />
+        <Route path='/create' element={<CreateNew addNew={addNew} />} />
         <Route path='/about' element={<About />} />
+        <Route path='/' element={<AnecdoteList anecdotes={anecdotes} />} />
       </Routes>
-
-      <div>
-        <i>Anecdotes app, Department of Computer Science 2023</i>
-      </div>
     </>
   )
 }

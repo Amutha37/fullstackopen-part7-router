@@ -18,9 +18,10 @@ const CreateNew = (props) => {
   return (
     <div>
       <h2>create a new anecdote</h2>
+
       <form onSubmit={handleSubmit}>
         <div>
-          content
+          content :
           <input
             name='content'
             value={content}
@@ -28,7 +29,7 @@ const CreateNew = (props) => {
           />
         </div>
         <div>
-          author
+          author :
           <input
             name='author'
             value={author}
@@ -36,14 +37,14 @@ const CreateNew = (props) => {
           />
         </div>
         <div>
-          url for more info
+          url for more info :
           <input
             name='info'
             value={info}
             onChange={(e) => setInfo(e.target.value)}
           />
         </div>
-        <button>create</button>
+        <button>create :</button>
       </form>
     </div>
   )
