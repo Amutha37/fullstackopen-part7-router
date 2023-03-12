@@ -4,6 +4,7 @@ const CreateNew = (props) => {
   const content = useField('text')
   const author = useField('text')
   const info = useField('text')
+  const reset = useField('')
   // const [content, setContent] = useState('')
   // const [author, setAuthor] = useState('')
   // const [info, setInfo] = useState('')
@@ -16,6 +17,12 @@ const CreateNew = (props) => {
       info: info.value,
       votes: 0,
     })
+  }
+
+  const handleReset = () => {
+    content.reset()
+    author.reset()
+    info.reset()
   }
 
   return (
@@ -56,7 +63,8 @@ const CreateNew = (props) => {
             // onChange={(e) => setInfo(e.target.value)}
           />
         </div>
-        <button>create :</button>
+        <button>Create </button>
+        <button onClick={handleReset}>Reset</button>
       </form>
     </div>
   )
