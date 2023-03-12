@@ -47,3 +47,14 @@ Exercise7.3
 
 - A notification informing them of this successful creation for the next five seconds.
 </details>
+
+<details>
+ <summary>
+Exercise7.4
+</summary>
+
+- Simplify the anecdote creation form of your application with the useField custom hook useField().
+
+- One natural place to save the custom hooks of your application is in the `/src/hooks/index.js `file.
+
+</details>
