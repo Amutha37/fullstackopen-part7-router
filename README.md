@@ -60,7 +60,7 @@ Exercise7.4
 </details>
 <details>
  <summary>
-Exercise7.5
+Exercise7.5 - 7.6
 </summary>
 
 - Expand the `useFields` custom hooks to offer a functionality of reseting the fields by adding `Reset` button.
