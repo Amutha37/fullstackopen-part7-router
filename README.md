@@ -58,3 +58,11 @@ Exercise7.4
 - One natural place to save the custom hooks of your application is in the `/src/hooks/index.js `file.
 
 </details>
+<details>
+ <summary>
+Exercise7.5
+</summary>
+
+- Expand the `useFields` custom hooks to offer a functionality of reseting the fields by adding `Reset` button.
+
+</details>
